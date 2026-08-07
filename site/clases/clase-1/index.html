@@ -21,251 +21,341 @@
 
     <div class="reveal">
       <div class="slides">
-        <section class="cover-slide">
-          <p class="slide-kicker">Arquitectura de Software</p>
-          <h1>Práctico 1</h1>
-          <p class="lead lead-xl">De monolitos a microservicios</p>
+        <section class="cover-slide cover-slide-refined">
+          <div class="title-block title-block-cover">
+            <p class="cover-strap">ARQUITECTURA DE</p>
+            <h1>SOFTWARE</h1>
+            <p class="cover-subtitle">PRÁCTICO</p>
+          </div>
+        </section>
+
+        <section class="profile-slide">
+          <div class="profile-card">
+            <p class="slide-kicker">Presentación</p>
+            <h2>Gerardo Salinas Alercia</h2>
+            <p class="profile-role">Ingeniero en Sistemas</p>
+            <div class="profile-data">
+              <p><strong>Tel:</strong> 3512185015</p>
+              <p><strong>Mail:</strong> gerardosalinas96@gmail.com</p>
+            </div>
+          </div>
         </section>
 
         <section>
           <div class="slide-header">
-            <p class="slide-kicker">Stack Tecnológico</p>
-            <h2>Herramientas base del curso</h2>
+            <h2>Stack Tecnológico</h2>
             <p class="lead">
-              El stack con el que vamos a trabajar durante la cursada.
+              Vamos a utilizar un conjunto de herramientas durante todo el curso.
+              Estas tecnologías son las mismas que utilizan empresas reales en proyectos
+              reales. NECESITAMOS TENERLAS A TODAS!
             </p>
           </div>
           <div class="logo-grid">
             <article class="logo-card">
-              <img src="../../assets/images/clase-1/git.png" alt="Git" />
+              <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" />
               <h3>Git</h3>
-              <p>Control de versiones para trabajo en equipo.</p>
+              <p>Sistema de control de versiones para coordinar el trabajo en grupo.</p>
             </article>
             <article class="logo-card">
-              <img src="../../assets/images/clase-1/vscode.png" alt="Visual Studio Code" />
-              <h3>VS Code</h3>
-              <p>Editor base para el desarrollo diario.</p>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="Visual Studio Code" />
+              <h3>Visual Studio Code</h3>
+              <p>Editor de código con extensiones que facilitan el desarrollo web.</p>
             </article>
             <article class="logo-card">
-              <img src="../../assets/images/clase-1/golang.png" alt="Golang" />
+              <img src="https://cdn.simpleicons.org/go/00ADD8" alt="Golang" />
               <h3>Golang</h3>
-              <p>Backend simple, rápido y eficiente.</p>
+              <p>Lenguaje open source diseñado por Google para ser simple, eficiente y rápido.</p>
             </article>
             <article class="logo-card">
-              <img src="../../assets/images/clase-1/chrome.png" alt="Chrome o Brave" />
+              <div class="icon-pair">
+                <img src="https://cdn.simpleicons.org/googlechrome/4285F4" alt="Chrome" />
+                <img src="https://cdn.simpleicons.org/brave/FB542B" alt="Brave" />
+              </div>
               <h3>Chrome / Brave</h3>
-              <p>Navegación y debugging desde DevTools.</p>
+              <p>Navegadores web con herramientas de desarrollo integradas.</p>
             </article>
             <article class="logo-card">
-              <img src="../../assets/images/clase-1/nodejs.png" alt="Node.js" />
+              <img src="https://cdn.simpleicons.org/nodedotjs/5FA04E" alt="Node.js" />
               <h3>Node.js</h3>
-              <p>Entorno para frontend, npm y tooling.</p>
+              <p>Necesario para armar el entorno del frontend, npm, TypeScript y levantar ese entorno.</p>
             </article>
             <article class="logo-card">
-              <img src="../../assets/images/clase-1/postman.png" alt="Postman o Swagger" />
+              <div class="icon-pair">
+                <img src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman" />
+                <img src="https://cdn.simpleicons.org/swagger/85EA2D" alt="Swagger" />
+              </div>
               <h3>Postman / Swagger</h3>
-              <p>Testing y documentación de APIs.</p>
+              <p>Herramientas para probar y documentar APIs de forma visual.</p>
             </article>
             <article class="logo-card">
-              <img src="../../assets/images/clase-1/sqlworkbench.png" alt="SQL Workbench" />
+              <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="SQL Workbench" />
               <h3>SQL Workbench</h3>
-              <p>Consultas y gestión visual de bases.</p>
+              <p>Interfaz gráfica para gestionar bases de datos y ejecutar consultas SQL.</p>
             </article>
             <article class="logo-card">
-              <img src="../../assets/images/clase-1/docker.png" alt="Docker" />
+              <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" />
               <h3>Docker</h3>
-              <p>Entornos aislados y reproducibles.</p>
+              <p>Entornos de desarrollo aislados y reproducibles.</p>
             </article>
+          </div>
+        </section>
+
+        <section class="divider-slide divider-slide-centered">
+          <div class="divider-inner">
+            <div class="title-chip">ARQUITECTURAS DE SOFTWARE</div>
+            <h1>De Monolitos a Microservicios</h1>
           </div>
         </section>
 
         <section>
           <div class="slide-header">
-            <p class="slide-kicker">Parte 1 · Teoría</p>
+            <p class="slide-kicker">PARTE 1 · TEORÍA</p>
             <h2>¿Qué es la Arquitectura de Software?</h2>
           </div>
           <div class="statement-panel">
             <p>
-              La arquitectura define cómo se organiza un sistema.
+              La arquitectura define cómo se organiza un sistema: su calidad,
+              mantenibilidad y escalabilidad dependen de ella.
             </p>
             <p>
-              Su calidad, mantenibilidad y escalabilidad dependen de esa estructura.
+              A medida que los proyectos crecen, suele aparecer la transición
+              hacia modelos distribuidos.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <div class="slide-header">
+            <p class="slide-kicker">PARTE 1 · TEORÍA</p>
+            <h2>Arquitectura Monolítica</h2>
+            <p class="lead">
+              Toda la lógica (UI, negocio y datos) empaquetada en un único despliegue.
+            </p>
+          </div>
+          <div class="card-grid three">
+            <article class="mini-card">
+              <h3>Single-process Monolith</h3>
+              <p>Todo el código en un solo proceso ejecutable.</p>
+            </article>
+            <article class="mini-card">
+              <h3>Monolito Modular</h3>
+              <p>Módulos lógicos, pero construidos y desplegados juntos.</p>
+            </article>
+            <article class="mini-card warning">
+              <div class="alert-mark">⚠️</div>
+              <h3>Monolito Distribuido</h3>
+              <p>Anti-patrón: servicios separados con alto acoplamiento que obligan a desplegar todo junto.</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="slide-header">
+            <p class="slide-kicker">PARTE 1 · TEORÍA</p>
+            <h2>Arquitectura de Microservicios</h2>
+            <p class="lead">
+              Servicios pequeños, independientes y poco acoplados. Cada uno tiene
+              su propia base de datos y se despliega de forma autónoma.
+            </p>
+          </div>
+          <div class="card-grid two">
+            <article class="mini-card">
+              <div class="badge-circle">↔</div>
+              <h3>Escalabilidad Independiente</h3>
+              <p>Cada servicio escala según su demanda.</p>
+            </article>
+            <article class="mini-card">
+              <div class="badge-circle">+</div>
+              <h3>Mantenibilidad</h3>
+              <p>Actualizar partes pequeñas es más manejable.</p>
+            </article>
+            <article class="mini-card">
+              <div class="badge-circle">≋</div>
+              <h3>Flexibilidad</h3>
+              <p>Distintos lenguajes según el problema.</p>
+            </article>
+            <article class="mini-card">
+              <div class="badge-circle">◎</div>
+              <h3>Concurrencia</h3>
+              <p>Cada servicio procesa múltiples requests simultáneamente sin bloqueos.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="diagram-slide">
+          <img
+            src="../../assets/images/clase-1/monolith-vs-microservices.svg"
+            alt="Comparación entre arquitectura monolítica y arquitectura de microservicios"
+          />
+        </section>
+
+        <section>
+          <div class="slide-header">
+            <h2>Se suman algunas más al Stack Tecnológico</h2>
+            <p class="lead">
+              Vamos a utilizar un conjunto de herramientas durante todo el curso.
+              Estas tecnologías son las mismas que utilizan empresas reales en proyectos
+              reales. NECESITAMOS TENERLAS A TODAS!
+            </p>
+          </div>
+          <div class="logo-grid four-only">
+            <article class="logo-card">
+              <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB" />
+              <h3>MongoDB</h3>
+              <p>Como base de datos NoSQL orientada a documentos para manejar datos no estructurados.</p>
+            </article>
+            <article class="logo-card">
+              <div class="icon-pair">
+                <img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis" />
+              </div>
+              <h3>MemCached / Redis</h3>
+              <p>Como herramientas de caché, que guardan datos temporalmente.</p>
+            </article>
+            <article class="logo-card">
+              <img src="https://cdn.simpleicons.org/apachesolr/D9411E" alt="Solr" />
+              <h3>Solr</h3>
+              <p>Como plataforma de búsqueda. Nos permite indexar datos y realizar búsquedas sofisticadas.</p>
+            </article>
+            <article class="logo-card">
+              <img src="https://cdn.simpleicons.org/rabbitmq/FF6600" alt="RabbitMQ" />
+              <h3>RabbitMQ</h3>
+              <p>Como sistema de mensajería que permite comunicación asíncrona.</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="slide-header">
+            <p class="slide-kicker">PARTE 2 · PRÁCTICA</p>
+            <h2>Definición de Endpoints RESTful</h2>
+            <p class="lead">
+              RESTful define reglas para nombrar recursos en APIs. En Go
+              (con Gin o router estándar), la convención es:
+            </p>
+          </div>
+          <div class="quote-box large">
+            <code>router.MÉTODO("/entidad_en_plural/:id", Controlador.Acción)</code>
+          </div>
+          <div class="mini-card list-card">
+            <h3>Componentes de la URI</h3>
+            <ul>
+              <li>Método HTTP: GET, POST, PUT, PATCH, DELETE</li>
+              <li>Entidad: nombre en plural (ej. users, albums, properties)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="slide-header">
+            <h2>Problema</h2>
+          </div>
+          <div class="story-card">
+            <p>
+              Imaginen que armaron el sistema para un gimnasio chico. Era hermoso
+              por donde lo veas, ordenado en Go, con una sola base de datos
+              relacional que manejaba todo, y lo vendieron caro.
+            </p>
+            <p>
+              Pero el gimnasio, en parte gracias a la excelente organización de
+              su sistema, se convirtió en un éxito absoluto. Abrieron cinco
+              sucursales, sumaron clases de Hyrox, funcional y yoga con cupos
+              estrictos, agregaron una tienda online, un café de especialidad,
+              integraciones externas y un club de beneficios.
+            </p>
+            <p>
+              Hoy en día, el sistema actual ya no da abasto y los despliegues y
+              el mantenimiento tienen riesgos cada vez más grandes.
             </p>
           </div>
           <div class="highlight-band">
-            <span>Cuando el proyecto crece, la arquitectura deja de ser invisible.</span>
+            <span>
+              Consigna: listen al menos tres problemas críticos o cuellos de
+              botella técnicos que el equipo sufre hoy con este monolito.
+            </span>
           </div>
         </section>
 
         <section>
           <div class="slide-header">
-            <p class="slide-kicker">Parte 1 · Teoría</p>
-            <h2>De monolito a microservicios</h2>
+            <p class="slide-kicker">PARTE 2 · PRÁCTICA</p>
+            <h2>Los 3 Problemas Críticos del Monolito</h2>
           </div>
-          <div class="media-split">
-            <div class="image-panel">
-              <img
-                src="../../assets/images/clase-1/monolith-vs-microservices.png"
-                alt="Comparación entre arquitectura monolítica y microservicios"
-              />
-            </div>
-            <div class="stack-cards">
-              <article class="mini-card">
-                <h3>Monolito</h3>
-                <p>UI, negocio y datos empaquetados en un único despliegue.</p>
-              </article>
-              <article class="mini-card">
-                <h3>Microservicios</h3>
-                <p>Servicios independientes, poco acoplados y desplegables por separado.</p>
-              </article>
-              <article class="mini-card warning">
-                <h3>Clave</h3>
-                <p>Separar no alcanza: importa bajar acoplamiento y subir cohesión.</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="slide-header">
-            <p class="slide-kicker">Parte 1 · Teoría</p>
-            <h2>Ventajas de microservicios</h2>
-          </div>
-          <div class="card-grid two spacious">
-            <article class="mini-card">
-              <h3>Escalabilidad independiente</h3>
-              <p>Cada servicio escala según su propia demanda.</p>
-            </article>
-            <article class="mini-card">
-              <h3>Mantenibilidad</h3>
-              <p>Actualizar partes pequeñas suele ser más controlable.</p>
-            </article>
-            <article class="mini-card">
-              <h3>Flexibilidad</h3>
-              <p>Permite elegir tecnologías según el dominio.</p>
-            </article>
-            <article class="mini-card">
-              <h3>Concurrencia</h3>
-              <p>El sistema procesa requests sin bloquear todo el ecosistema.</p>
-            </article>
-          </div>
-        </section>
-
-        <section>
-          <div class="slide-header">
-            <p class="slide-kicker">Stack Tecnológico</p>
-            <h2>Herramientas que se suman</h2>
-          </div>
-          <div class="logo-grid compact">
-            <article class="logo-card">
-              <div class="logo-placeholder">MongoDB</div>
-              <h3>MongoDB</h3>
-              <p>NoSQL orientada a documentos.</p>
-            </article>
-            <article class="logo-card">
-              <img src="../../assets/images/clase-1/memcached.png" alt="Memcached o Redis" />
-              <h3>Memcached / Redis</h3>
-              <p>Caché para acelerar lecturas.</p>
-            </article>
-            <article class="logo-card">
-              <img src="../../assets/images/clase-1/solr.png" alt="Solr" />
-              <h3>Solr</h3>
-              <p>Búsqueda e indexación.</p>
-            </article>
-            <article class="logo-card">
-              <img src="../../assets/images/clase-1/rabbitmq.png" alt="RabbitMQ" />
-              <h3>RabbitMQ</h3>
-              <p>Mensajería asíncrona.</p>
-            </article>
-          </div>
-        </section>
-
-        <section>
-          <div class="slide-header">
-            <p class="slide-kicker">Parte 2 · Práctica</p>
-            <h2>Definición de Endpoints RESTful</h2>
-          </div>
-          <div class="quote-box large">
-            <code>router.METODO("/entidades/:id", controlador.Accion)</code>
-          </div>
-          <div class="rule-row">
-            <div class="pill-block">
-              <span class="pill">GET</span>
-              <span class="pill">POST</span>
-              <span class="pill">PUT</span>
-              <span class="pill">PATCH</span>
-              <span class="pill">DELETE</span>
-            </div>
-            <p>Recursos uniformes en plural: <code>users</code>, <code>activities</code>, <code>products</code>.</p>
-          </div>
-        </section>
-
-        <section>
-          <div class="slide-header">
-            <p class="slide-kicker">Problema</p>
-            <h2>El gimnasio explotó de crecimiento</h2>
-          </div>
-          <div class="story-layout wide">
-            <div class="statement-panel">
+          <div class="card-grid three">
+            <article class="mini-card warning">
+              <h3>Acoplamiento Alto</h3>
               <p>
-                El sistema que servía para un gimnasio chico ahora tiene sucursales,
-                clases con cupos, tienda online, café, integraciones externas y club de beneficios.
+                Un cambio o error en cualquier módulo puede romper todo el sistema.
+                Si falla el módulo de café, los usuarios no pueden entrenar.
               </p>
-            </div>
-            <div class="mini-card accent">
-              <h3>Consigna</h3>
-              <p>Detectar al menos tres cuellos de botella técnicos del monolito actual.</p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="slide-header">
-            <p class="slide-kicker">Parte 2 · Práctica</p>
-            <h2>Los 3 problemas críticos del monolito</h2>
-          </div>
-          <div class="card-grid three spacious">
-            <article class="mini-card warning">
-              <h3>Acoplamiento alto</h3>
-              <p>Un error en un módulo puede romper partes no relacionadas del sistema.</p>
             </article>
             <article class="mini-card warning">
-              <h3>Escalabilidad limitada</h3>
-              <p>No se puede escalar solo tienda o reservas sin mover todo el sistema.</p>
+              <h3>Escalabilidad Limitada</h3>
+              <p>
+                No puedes escalar solo la tienda sin escalar todo el sistema.
+                Esto desperdicia recursos y dinero.
+              </p>
             </article>
             <article class="mini-card warning">
-              <h3>Despliegues riesgosos</h3>
-              <p>Cada deploy impacta a toda la plataforma y sube el riesgo operativo.</p>
+              <h3>Despliegues Riesgosos</h3>
+              <p>
+                Cada deploy afecta a todo el sistema. Un pequeño bug requiere
+                desplegar todo nuevamente y pone en riesgo todas las funcionalidades.
+              </p>
             </article>
           </div>
         </section>
 
         <section>
           <div class="slide-header">
-            <p class="slide-kicker">Primera Decisión</p>
-            <h2>Migrar hacia microservicios</h2>
-            <p class="lead">
-              Objetivo: bajo acoplamiento y alta cohesión.
+            <h2>Primera Decisión</h2>
+          </div>
+          <div class="statement-panel">
+            <p>
+              Escenario: Tras los problemas detectados, la decisión técnica es
+              migrar hacia una arquitectura de microservicios.
+            </p>
+            <p>
+              El objetivo es lograr un bajo acoplamiento y alta cohesión.
             </p>
           </div>
-          <div class="domain-cloud">
-            <span>Usuarios</span>
-            <span>Actividades</span>
-            <span>Tienda</span>
-            <span>Café</span>
-            <span>Beneficios</span>
-            <span>Pagos</span>
+          <div class="highlight-band">
+            <span>
+              Consigna: sin escribir código ni pensar en bases de datos,
+              ¿en cuántos microservicios dividirían el nuevo ecosistema del gimnasio?
+            </span>
           </div>
         </section>
 
         <section>
           <div class="slide-header">
-            <p class="slide-kicker">Solución</p>
-            <h2>Endpoints RESTful por dominio</h2>
+            <h2>A cranearlo</h2>
+          </div>
+          <div class="mini-card list-card">
+            <p>
+              Consigna: respetando las buenas prácticas de diseño RESTful
+              (entidades uniformes en plural, uso correcto de verbos HTTP),
+              escriban las líneas del router en Go definiendo 4 endpoints para:
+            </p>
+            <ul class="alpha-list">
+              <li>Dominio de Usuarios (Identidad).</li>
+              <li>Dominio de Actividades (Clases/Hyrox).</li>
+              <li>Dominio de E-Commerce (Tienda/Café).</li>
+              <li>Dominio de Beneficios (Loyalty).</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="slide-header">
+            <h2>Solución: Endpoints RESTful</h2>
+            <p class="lead">
+              A continuación, la definición de 4 endpoints para cada dominio,
+              siguiendo las buenas prácticas de diseño RESTful:
+            </p>
           </div>
           <div class="table-grid">
             <article class="endpoint-card">
-              <h3>Usuarios</h3>
+              <h3>Usuarios (Identidad)</h3>
               <ul>
                 <li><code>GET /users</code></li>
                 <li><code>POST /users</code></li>
@@ -274,7 +364,7 @@
               </ul>
             </article>
             <article class="endpoint-card">
-              <h3>Actividades</h3>
+              <h3>Actividades (Clases/Hyrox)</h3>
               <ul>
                 <li><code>GET /activities</code></li>
                 <li><code>POST /activities</code></li>
@@ -283,7 +373,7 @@
               </ul>
             </article>
             <article class="endpoint-card">
-              <h3>E-Commerce</h3>
+              <h3>E-Commerce (Tienda/Café)</h3>
               <ul>
                 <li><code>GET /products</code></li>
                 <li><code>POST /products</code></li>
@@ -292,7 +382,7 @@
               </ul>
             </article>
             <article class="endpoint-card">
-              <h3>Beneficios</h3>
+              <h3>Beneficios (Loyalty)</h3>
               <ul>
                 <li><code>GET /benefits</code></li>
                 <li><code>POST /benefits</code></li>
@@ -305,43 +395,65 @@
 
         <section>
           <div class="slide-header">
-            <p class="slide-kicker">Parte 2 · Teoría</p>
+            <p class="slide-kicker">PARTE 2 · TEORÍA</p>
             <h2>Microservicios con Interfaces y Mocks</h2>
           </div>
-          <div class="statement-panel">
+          <div class="story-card">
             <p>
-              Actividades necesita validar con Usuarios si la cuota está al día antes de reservar una clase.
+              Imaginemos que estamos programando el Microservicio de Actividades.
+              Alguien quiere reservar su clase de Hyrox. Por regla de negocio,
+              antes de darle el cupo, tenemos que preguntarle al Microservicio de
+              Usuarios si esa persona tiene la cuota al día.
             </p>
-          </div>
-          <div class="highlight-band danger">
-            <span>Si Usuarios no está listo o no responde, Actividades queda bloqueado.</span>
+            <p>
+              Como ahora son microservicios separados, la única forma de
+              comunicarse es haciendo una petición HTTP por la red.
+            </p>
+            <p>
+              Si el equipo que programa Usuarios todavía no terminó su código,
+              o si no tenemos internet, nuestro microservicio de Actividades se
+              queda trabado esperando.
+            </p>
           </div>
         </section>
 
         <section>
           <div class="slide-header">
-            <p class="slide-kicker">La solución</p>
-            <h2>Interfaces y Mocks</h2>
+            <h2>La Solución: Interfaces y Mocks</h2>
+            <p class="lead">
+              El equipo de Actividades necesita saber si un usuario tiene cuota
+              al día, pero el equipo de Usuarios aún no terminó su código.
+              ¿Qué hacemos? ¿Esperamos? ¡No!
+            </p>
           </div>
           <div class="steps-grid">
             <article class="step-card">
               <span>1</span>
-              <h3>Contrato</h3>
-              <p>Definir la interface y la forma esperada de la respuesta.</p>
+              <h3>Define un Contrato</h3>
+              <p>
+                “El Microservicio de Usuarios me devolverá un objeto con
+                {id, nombre, cuotaAlDia: true/false}”.
+              </p>
             </article>
             <article class="step-card">
               <span>2</span>
-              <h3>Mock</h3>
-              <p>Desarrollar contra una versión fake mientras el otro servicio no está.</p>
+              <h3>Crea un Mock</h3>
+              <p>
+                Mientras Usuarios no está listo, usas una versión fake que siempre
+                devuelve “cuotaAlDia: true”.
+              </p>
             </article>
             <article class="step-card">
               <span>3</span>
-              <h3>Real</h3>
-              <p>Reemplazar luego el mock por la llamada HTTP sin cambiar el contrato.</p>
+              <h3>Cambia a Real</h3>
+              <p>
+                Cuando Usuarios esté listo, reemplazas el Mock por la petición HTTP real.
+              </p>
             </article>
           </div>
           <div class="quote-box soft">
-            <strong>Ventaja:</strong> los equipos trabajan en paralelo; el acuerdo es el contrato, no la implementación.
+            <strong>Ventaja:</strong> Los equipos trabajan en paralelo sin dependencias
+            bloqueantes. El Contrato es el acuerdo, no la implementación.
           </div>
         </section>
       </div>
@@ -352,7 +464,7 @@
       const deck = new Reveal({
         hash: true,
         slideNumber: "c/t",
-        transition: "fade",
+        transition: "slide",
         backgroundTransition: "fade",
         controlsLayout: "edges",
         navigationMode: "default",

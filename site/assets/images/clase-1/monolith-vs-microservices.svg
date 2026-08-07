@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800" fill="none">
+  <rect width="1400" height="800" rx="36" fill="#F6F6F6"/>
+  <text x="285" y="84" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" text-anchor="middle" fill="#111827">ARQUITECTURA</text>
+  <text x="285" y="124" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" text-anchor="middle" fill="#111827">MONOLÍTICA</text>
+  <text x="980" y="84" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" text-anchor="middle" fill="#111827">ARQUITECTURA DE MICROSERVICIOS</text>
+
+  <circle cx="285" cy="248" r="84" fill="#E53935"/>
+  <text x="285" y="235" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="white">Interfaz</text>
+  <text x="285" y="265" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="white">de usuario</text>
+
+  <circle cx="212" cy="380" r="84" fill="#9E9E9E"/>
+  <text x="212" y="370" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="white">Lógica</text>
+  <text x="212" y="396" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="white">empresarial</text>
+
+  <circle cx="358" cy="380" r="84" fill="#9E9E9E"/>
+  <text x="358" y="357" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="white">Capa de</text>
+  <text x="358" y="383" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="white">acceso a</text>
+  <text x="358" y="409" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="white">los datos</text>
+
+  <line x1="285" y1="464" x2="285" y2="548" stroke="#8A8A8A" stroke-width="6"/>
+  <ellipse cx="285" cy="606" rx="36" ry="16" stroke="#6B7280" stroke-width="4" fill="white"/>
+  <path d="M249 606V672C249 681 265 688 285 688C305 688 321 681 321 672V606" stroke="#6B7280" stroke-width="4" fill="white"/>
+  <path d="M249 638C249 647 265 654 285 654C305 654 321 647 321 638" stroke="#6B7280" stroke-width="4"/>
+  <path d="M249 670C249 679 265 686 285 686C305 686 321 679 321 670" stroke="#6B7280" stroke-width="4"/>
+  <text x="285" y="744" font-family="Arial, Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#111827">Base de datos</text>
+
+  <circle cx="820" cy="180" r="70" fill="#9E9E9E"/>
+  <text x="820" y="188" font-family="Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle" fill="white">Microservicio</text>
+
+  <circle cx="1110" cy="180" r="82" fill="#E53935"/>
+  <text x="1110" y="166" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="white">Interfaz</text>
+  <text x="1110" y="194" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="white">de usuario</text>
+
+  <circle cx="1325" cy="180" r="70" fill="#9E9E9E"/>
+  <text x="1325" y="188" font-family="Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle" fill="white">Microservicio</text>
+
+  <circle cx="820" cy="420" r="70" fill="#9E9E9E"/>
+  <text x="820" y="428" font-family="Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle" fill="white">Microservicio</text>
+
+  <circle cx="1020" cy="420" r="70" fill="#9E9E9E"/>
+  <text x="1020" y="428" font-family="Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle" fill="white">Microservicio</text>
+
+  <circle cx="1215" cy="420" r="70" fill="#9E9E9E"/>
+  <text x="1215" y="428" font-family="Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle" fill="white">Microservicio</text>
+
+  <circle cx="1410" cy="420" r="70" transform="translate(-70)" fill="#9E9E9E"/>
+  <text x="1340" y="428" font-family="Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle" fill="white">Microservicio</text>
+
+  <line x1="890" y1="180" x2="1028" y2="180" stroke="#8A8A8A" stroke-width="5"/>
+  <line x1="1192" y1="180" x2="1255" y2="180" stroke="#8A8A8A" stroke-width="5"/>
+  <line x1="1060" y1="252" x2="872" y2="346" stroke="#8A8A8A" stroke-width="5"/>
+  <line x1="1095" y1="262" x2="1044" y2="346" stroke="#8A8A8A" stroke-width="5"/>
+  <line x1="1124" y1="262" x2="1190" y2="346" stroke="#8A8A8A" stroke-width="5"/>
+  <line x1="1160" y1="252" x2="1310" y2="346" stroke="#8A8A8A" stroke-width="5"/>
+
+  <g transform="translate(785 528)">
+    <line x1="35" y1="0" x2="35" y2="78" stroke="#8A8A8A" stroke-width="5"/>
+    <ellipse cx="35" cy="118" rx="30" ry="13" stroke="#6B7280" stroke-width="4" fill="white"/>
+    <path d="M5 118V172C5 180 18 186 35 186C52 186 65 180 65 172V118" stroke="#6B7280" stroke-width="4" fill="white"/>
+    <path d="M5 145C5 153 18 159 35 159C52 159 65 153 65 145" stroke="#6B7280" stroke-width="4"/>
+    <path d="M5 171C5 179 18 185 35 185C52 185 65 179 65 171" stroke="#6B7280" stroke-width="4"/>
+  </g>
+  <g transform="translate(985 528)">
+    <line x1="35" y1="0" x2="35" y2="78" stroke="#8A8A8A" stroke-width="5"/>
+    <ellipse cx="35" cy="118" rx="30" ry="13" stroke="#6B7280" stroke-width="4" fill="white"/>
+    <path d="M5 118V172C5 180 18 186 35 186C52 186 65 180 65 172V118" stroke="#6B7280" stroke-width="4" fill="white"/>
+    <path d="M5 145C5 153 18 159 35 159C52 159 65 153 65 145" stroke="#6B7280" stroke-width="4"/>
+    <path d="M5 171C5 179 18 185 35 185C52 185 65 179 65 171" stroke="#6B7280" stroke-width="4"/>
+  </g>
+  <g transform="translate(1180 528)">
+    <line x1="35" y1="0" x2="35" y2="78" stroke="#8A8A8A" stroke-width="5"/>
+    <ellipse cx="35" cy="118" rx="30" ry="13" stroke="#6B7280" stroke-width="4" fill="white"/>
+    <path d="M5 118V172C5 180 18 186 35 186C52 186 65 180 65 172V118" stroke="#6B7280" stroke-width="4" fill="white"/>
+    <path d="M5 145C5 153 18 159 35 159C52 159 65 153 65 145" stroke="#6B7280" stroke-width="4"/>
+    <path d="M5 171C5 179 18 185 35 185C52 185 65 179 65 171" stroke="#6B7280" stroke-width="4"/>
+  </g>
+  <g transform="translate(1305 528)">
+    <line x1="35" y1="0" x2="35" y2="78" stroke="#8A8A8A" stroke-width="5"/>
+    <ellipse cx="35" cy="118" rx="30" ry="13" stroke="#6B7280" stroke-width="4" fill="white"/>
+    <path d="M5 118V172C5 180 18 186 35 186C52 186 65 180 65 172V118" stroke="#6B7280" stroke-width="4" fill="white"/>
+    <path d="M5 145C5 153 18 159 35 159C52 159 65 153 65 145" stroke="#6B7280" stroke-width="4"/>
+    <path d="M5 171C5 179 18 185 35 185C52 185 65 179 65 171" stroke="#6B7280" stroke-width="4"/>
+  </g>
+
+  <text x="820" y="770" font-family="Arial, Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#111827">Base de datos</text>
+  <text x="1020" y="770" font-family="Arial, Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#111827">Base de datos</text>
+  <text x="1215" y="770" font-family="Arial, Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#111827">Base de datos</text>
+  <text x="1340" y="770" font-family="Arial, Helvetica, sans-serif" font-size="24" text-anchor="middle" fill="#111827">Base de datos</text>
+</svg>
