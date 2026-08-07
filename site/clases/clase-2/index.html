@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 2 | Arquitectura de Software</title>
+    <meta
+      name="description"
+      content="Clase 2 práctica de Arquitectura de Software."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css"
+    />
+    <link rel="stylesheet" href="../../assets/reveal-practice.css" />
+  </head>
+  <body class="practice-deck-body">
+    <div class="deck-toolbar deck-toolbar-light">
+      <a href="../../">Volver al índice</a>
+    </div>
+
+    <div class="reveal practice-reveal">
+      <div class="slides">
+        <section class="practice-cover">
+          <p class="practice-eyebrow">Práctico</p>
+          <h1>Clase 2</h1>
+          <p class="practice-link">MongoDB, Docker e Interfaces</p>
+        </section>
+
+        <section>
+          <div class="practice-header">
+            <h2>Herramientas que vamos a usar</h2>
+          </div>
+          <div class="practice-tools-grid">
+            <article class="practice-tool-card">
+              <img
+                class="practice-tool-logo"
+                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Docker%20Logo.svg"
+                alt="Logo de Docker"
+              />
+              <h3>Docker</h3>
+              <p>Empaqueta la base de datos en un contenedor listo para ejecutar.</p>
+            </article>
+            <article class="practice-tool-card">
+              <img
+                class="practice-tool-logo"
+                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/MongoDB%20Logo.svg"
+                alt="Logo de MongoDB"
+              />
+              <h3>MongoDB</h3>
+              <p>Base de datos NoSQL que guarda información en documentos.</p>
+            </article>
+            <article class="practice-tool-card">
+              <img
+                class="practice-tool-logo practice-tool-logo-go"
+                src="https://go.dev/blog/go-brand/Go-Logo/SVG/Go-Logo_Blue.svg"
+                alt="Logo de Go"
+              />
+              <h3>Go</h3>
+              <p>Lenguaje con el que vamos a conectarnos a MongoDB y armar el repositorio.</p>
+            </article>
+            <article class="practice-tool-card practice-tool-card-accent">
+              <div class="practice-tool-badge">Interface</div>
+              <h3>Interfaces</h3>
+              <p>Definen qué métodos debe cumplir un repositorio, sin importar si es real o mock.</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="practice-header">
+            <h2>Ejercicio: Ejecutar MongoDB con Docker</h2>
+          </div>
+          <div class="practice-stack">
+            <article class="practice-panel">
+              <h3>Descargar la imagen</h3>
+              <pre><code class="language-bash">docker pull mongo:4.4.6</code></pre>
+            </article>
+            <article class="practice-panel">
+              <h3>Ejecutar el contenedor</h3>
+              <pre><code class="language-bash">docker run -p 27017:27017 \
+  -e MONGO_INITDB_ROOT_USERNAME=root \
+  -e MONGO_INITDB_ROOT_PASSWORD=root \
+  --name my-mongo mongo:4.4.6</code></pre>
+            </article>
+            <article class="practice-panel">
+              <h3>Acceder al contenedor</h3>
+              <pre><code class="language-bash">docker ps
+docker exec -ti my-mongo bash</code></pre>
+            </article>
+            <article class="practice-panel">
+              <h3>Iniciar el cliente</h3>
+              <pre><code class="language-bash">mongo --username root --password root \
+  --authenticationDatabase admin
+
+show dbs</code></pre>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="practice-header">
+            <h2>Comandos</h2>
+          </div>
+          <div class="practice-grid two">
+            <article class="practice-panel">
+              <h3>Seleccionar base</h3>
+              <pre><code class="language-bash">use hotels</code></pre>
+            </article>
+            <article class="practice-panel">
+              <h3>Consultar documentos</h3>
+              <pre><code class="language-bash">db.hotels.find().pretty()
+db.hotels.find({ name: "Grand Hotel" }).pretty()</code></pre>
+            </article>
+          </div>
+          <article class="practice-panel practice-panel-wide">
+            <h3>Crear colección e insertar documentos</h3>
+            <pre><code class="language-javascript">db.hotels.insertMany([
+  {
+    id: 1,
+    name: "Grand Hotel",
+    city: "Springfield",
+    state: "IL",
+    country: "USA",
+    rating: 4.5,
+    available_rooms: 20,
+    price_per_night: 150.00,
+    amenities: ["Free WiFi", "Pool", "Gym"]
+  },
+  {
+    id: 2,
+    name: "Cozy Inn",
+    city: "Oakville",
+    state: "CA",
+    country: "USA",
+    rating: 3.8,
+    available_rooms: 15,
+    price_per_night: 90.00,
+    amenities: ["Free Breakfast", "Parking"]
+  }
+])</code></pre>
+          </article>
+        </section>
+
+        <section>
+          <div class="practice-header">
+            <h2>Comandos</h2>
+          </div>
+          <div class="practice-grid two">
+            <article class="practice-panel">
+              <h3>Modificar documentos</h3>
+              <pre><code class="language-javascript">db.hotels.updateOne(
+  { name: "Grand Hotel" },
+  { $set: { address: "999 Washington St" } }
+)</code></pre>
+            </article>
+            <article class="practice-panel">
+              <h3>Eliminar documentos</h3>
+              <pre><code class="language-javascript">db.hotels.deleteOne({ name: "Grand Hotel" })
+db.hotels.deleteMany({ rating: { $lt: 3 } })</code></pre>
+            </article>
+            <article class="practice-panel">
+              <h3>Contar documentos</h3>
+              <pre><code class="language-javascript">db.hotels.countDocuments({})</code></pre>
+            </article>
+            <article class="practice-panel">
+              <h3>Ordenar y limitar</h3>
+              <pre><code class="language-javascript">db.hotels.find().sort({ rating: 1 }).pretty()
+db.hotels.find().limit(2).pretty()</code></pre>
+            </article>
+            <article class="practice-panel">
+              <h3>Saltar resultados</h3>
+              <pre><code class="language-javascript">db.hotels.find().skip(2).pretty()</code></pre>
+            </article>
+            <article class="practice-panel">
+              <h3>Eliminar colección y salir</h3>
+              <pre><code class="language-javascript">db.hotels.drop()
+exit</code></pre>
+            </article>
+          </div>
+        </section>
+
+        <section class="practice-title-slide practice-title-slide-accent">
+          <p class="practice-eyebrow">Bloque 2</p>
+          <h1>Implementación en Go con interfaces</h1>
+          <div class="practice-intro-note">
+            <p>Lo hacemos así para separar responsabilidades.</p>
+            <ul>
+              <li>La app real usa MongoDB.</li>
+              <li>Los tests pueden usar un mock en memoria.</li>
+              <li>La interfaz permite cambiar una implementación por otra sin romper el resto.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="practice-header">
+            <h2>¿Qué es una interfaz?</h2>
+          </div>
+          <div class="practice-interface-layout">
+            <article class="practice-panel">
+              <p class="practice-flow-label">Definición simple</p>
+              <p>
+                Una interfaz es un contrato: dice <strong>qué se puede hacer</strong>,
+                pero no obliga a usar una sola implementación.
+              </p>
+            </article>
+            <article class="practice-panel practice-interface-diagram">
+              <div class="practice-interface-node">
+                <span>HotelsRepo</span>
+                <small>GetHotelByID(id)</small>
+              </div>
+              <div class="practice-interface-arrow" aria-hidden="true">↓</div>
+              <div class="practice-interface-branches">
+                <div class="practice-interface-leaf">
+                  <strong>MongoDB</strong>
+                  <small>app real</small>
+                </div>
+                <div class="practice-interface-leaf">
+                  <strong>Mock</strong>
+                  <small>tests</small>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="practice-flow-slide">
+          <div class="practice-header">
+            <h2>Implementación en Go con interfaces</h2>
+          </div>
+          <div class="practice-sequence">
+            <article class="practice-sequence-step practice-sequence-step-code">
+              <p class="practice-flow-label">Paso 1</p>
+              <h3>Conectarse a MongoDB</h3>
+              <pre><code class="language-go">mongo.Connect(ctx, clientOptions)</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <article class="practice-sequence-step practice-sequence-step-note">
+              <p class="practice-flow-label">Qué significa</p>
+              <p>Primero abrimos la conexión con la base de datos.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="practice-flow-slide">
+          <div class="practice-header">
+            <h2>Implementación en Go con interfaces</h2>
+          </div>
+          <div class="practice-sequence">
+            <article class="practice-sequence-step practice-sequence-step-code">
+              <p class="practice-flow-label">Paso 1</p>
+              <h3>Conectarse a MongoDB</h3>
+              <pre><code class="language-go">mongo.Connect(ctx, clientOptions)</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <article class="practice-sequence-step practice-sequence-step-code">
+              <p class="practice-flow-label">Paso 2</p>
+              <h3>Buscar un hotel</h3>
+              <pre><code class="language-go">client.Database("hotel-platform").
+  Collection("hotels").
+  Find(ctx, bson.M{"id": 1})</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <article class="practice-sequence-step practice-sequence-step-note">
+              <p class="practice-flow-label">Qué significa</p>
+              <p>Obtener el documento con <code>id = 1</code>.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="practice-flow-slide">
+          <div class="practice-header">
+            <h2>Implementación en Go con interfaces</h2>
+          </div>
+          <div class="practice-sequence">
+            <article class="practice-sequence-step practice-sequence-step-code">
+              <p class="practice-flow-label">Paso 1</p>
+              <h3>Conectarse a MongoDB</h3>
+              <pre><code class="language-go">mongo.Connect(ctx, clientOptions)</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <article class="practice-sequence-step practice-sequence-step-code">
+              <p class="practice-flow-label">Paso 2</p>
+              <h3>Buscar un hotel</h3>
+              <pre><code class="language-go">client.Database("hotel-platform").
+  Collection("hotels").
+  Find(ctx, bson.M{"id": 1})</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <article class="practice-sequence-step practice-sequence-step-note practice-sequence-step-highlight">
+              <p class="practice-flow-label">Resultado</p>
+              <p>Para la ejecución de la aplicación.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="practice-flow-slide">
+          <div class="practice-header">
+            <h2>Implementación en Go con interfaces</h2>
+          </div>
+          <div class="practice-sequence">
+            <article class="practice-sequence-step practice-sequence-step-code">
+              <p class="practice-flow-label">Paso 1</p>
+              <h3>Conectarse a MongoDB</h3>
+              <pre><code class="language-go">mongo.Connect(ctx, clientOptions)</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <article class="practice-sequence-step practice-sequence-step-code">
+              <p class="practice-flow-label">Paso 2</p>
+              <h3>Buscar un hotel</h3>
+              <pre><code class="language-go">client.Database("hotel-platform").
+  Collection("hotels").
+  Find(ctx, bson.M{"id": 1})</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <article class="practice-sequence-step practice-sequence-step-code">
+              <p class="practice-flow-label">Paso 3</p>
+              <h3>Crear un mock en memoria</h3>
+              <pre><code class="language-go">docs := make(map[string]HotelDAO)</code></pre>
+              <p class="practice-inline-note">
+                Creamos un espacio en memoria para guardar hoteles de prueba.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="practice-flow-slide">
+          <div class="practice-header">
+            <h2>Paso 4: uso en tests</h2>
+          </div>
+          <div class="practice-sequence">
+            <article class="practice-sequence-step practice-sequence-step-code">
+              <p class="practice-flow-label">Paso 4</p>
+              <h3>Leer desde el mock</h3>
+              <pre><code class="language-go">docs[id]</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <article class="practice-sequence-step practice-sequence-step-note practice-sequence-step-highlight">
+              <p class="practice-flow-label">Resultado</p>
+              <p>En los tests leemos desde el mock, sin conectarnos a MongoDB real.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="practice-step-slide">
+          <div class="practice-header">
+            <h2>1. Definir la interfaz</h2>
+          </div>
+          <div class="practice-step-stack">
+            <article class="practice-panel practice-code-focus">
+              <pre><code class="language-go">type HotelsRepo interface {
+  GetHotelByID(id int64) (HotelDAO, error)
+}</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <aside class="practice-step-note">
+              <p class="practice-flow-label">Idea principal</p>
+              <p>La interfaz debe ser genérica.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="practice-step-slide">
+          <div class="practice-header">
+            <h2>2. Implementar la interfaz MongoDB</h2>
+          </div>
+          <div class="practice-step-stack">
+            <article class="practice-panel practice-code-focus">
+              <pre><code class="language-go">type HotelsRepo interface {
+  GetHotelByID(id int64) (HotelDAO, error)
+}
+
+type HotelsMongoDB struct{}
+
+func (repo HotelsMongoDB) GetHotelByID(id int64) error {
+}</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <aside class="practice-step-note">
+              <p class="practice-flow-label">Implementación real</p>
+              <p>Se usará durante la ejecución de la aplicación.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="practice-step-slide">
+          <div class="practice-header">
+            <h2>3. Implementar la interfaz Mock</h2>
+          </div>
+          <div class="practice-step-stack">
+            <article class="practice-panel practice-code-focus">
+              <pre><code class="language-go">type HotelsRepo interface {
+  GetHotelByID(id int64) (HotelDAO, error)
+}
+
+type HotelsMongoDB struct{}
+func (repo HotelsMongoDB) GetHotelByID(id int64) error {
+}
+
+type HotelsMock struct{}
+func (repo HotelsMock) GetHotelByID(id int64) error {
+}</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <aside class="practice-step-note">
+              <p class="practice-flow-label">Implementación mock</p>
+              <p>Sirve para tests y desarrollo desacoplado.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="practice-step-slide">
+          <div class="practice-header">
+            <h2>4. Separar implementaciones</h2>
+          </div>
+          <div class="practice-step-stack">
+            <article class="practice-panel practice-code-focus">
+              <pre><code class="language-go">type HotelsRepo interface {
+  GetHotelByID(id int64) (HotelDAO, error)
+}
+
+type HotelsMongoDB struct {
+  client *mongo.Client
+}
+
+func (repo HotelsMongoDB) GetHotelByID(id int64) error {
+  repo.client.Database("hotel-platform").
+    Collection("hotels").
+    Find(ctx, bson.M{"id": id})
+}</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <aside class="practice-step-note">
+              <p class="practice-flow-label">Implementación real</p>
+              <p>Conecta contra MongoDB y consulta la colección real.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="practice-step-slide">
+          <div class="practice-header">
+            <h2>4. Separar implementaciones</h2>
+          </div>
+          <div class="practice-step-stack">
+            <article class="practice-panel practice-code-focus">
+              <pre><code class="language-go">type HotelsRepo interface {
+  GetHotelByID(id int64) (HotelDAO, error)
+}
+
+type HotelsMongoDB struct {
+  client *mongo.Client
+}
+
+func (repo HotelsMongoDB) GetHotelByID(id int64) error {
+  repo.client.Database("hotel-platform").
+    Collection("hotels").
+    Find(ctx, bson.M{"id": id})
+}
+
+type HotelsMock struct {
+  docs map[string]HotelDAO
+}
+
+func (repo HotelsMock) GetHotelByID(id int64) error {
+  return docs[id]
+}</code></pre>
+            </article>
+            <div class="practice-sequence-arrow" aria-hidden="true">↓</div>
+            <aside class="practice-step-note">
+              <p class="practice-flow-label">Implementación mock</p>
+              <p>Usa datos en memoria para responder durante los tests.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="practice-step-slide">
+          <div class="practice-header">
+            <h2>5. Sugerencia de organización de archivos</h2>
+          </div>
+          <div class="practice-org-grid">
+            <article class="practice-panel practice-tree">
+              <p class="practice-flow-label">DAOs</p>
+              <pre><code>hotels-api/
+  dao/
+    hotels/
+      hotels_dao.go</code></pre>
+              <p class="callout">Un paquete para definir los DAOs.</p>
+            </article>
+            <article class="practice-panel practice-tree">
+              <p class="practice-flow-label">Repositorios</p>
+              <pre><code>hotels-api/
+  repositories/
+    hotels/
+      hotels_mock.go
+      hotels_mongo.go</code></pre>
+              <p class="callout">Un paquete para definir los repositorios.</p>
+            </article>
+            <article class="practice-panel practice-tree">
+              <p class="practice-flow-label">Servicio</p>
+              <pre><code>hotels-api/
+  services/
+    hotels/
+      hotels_service.go</code></pre>
+              <p class="callout">El servicio usa el repositorio MongoDB.</p>
+            </article>
+            <article class="practice-panel practice-tree">
+              <p class="practice-flow-label">Tests</p>
+              <pre><code>hotels-api/
+  services/
+    hotels/
+      hotels_service_test.go</code></pre>
+              <p class="callout">Los test del servicio usan el repositorio Mock.</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="practice-header">
+            <h2>Ejercicio</h2>
+          </div>
+          <article class="practice-panel">
+            <p>Completar las funciones de:</p>
+            <ul>
+              <li>Repositorio</li>
+              <li>Service</li>
+              <li>Controllers</li>
+            </ul>
+            <p>Para la API de Items con MongoDB.</p>
+            <p class="practice-exercise-link">
+              Ruta local:
+              <code>ejercicios/clase-2/items-api/TODO.md</code>
+            </p>
+            <p class="practice-exercise-link">
+              Ejercicio en GitHub:
+              <a
+                href="https://github.com/gerasalinas7/presentacionesArquitecturaDeSoftware/blob/main/ejercicios/clase-2/items-api/TODO.md"
+                target="_blank"
+                rel="noreferrer"
+              >
+                github.com/gerasalinas7/presentacionesArquitecturaDeSoftware/blob/main/ejercicios/clase-2/items-api/TODO.md
+              </a>
+            </p>
+          </article>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+    <script>
+      const deck = new Reveal({
+        hash: true,
+        slideNumber: "c/t",
+        transition: "slide",
+        backgroundTransition: "fade",
+        controlsLayout: "edges",
+        navigationMode: "default",
+        margin: 0.05,
+      });
+      deck.initialize();
+    </script>
+  </body>
+</html>

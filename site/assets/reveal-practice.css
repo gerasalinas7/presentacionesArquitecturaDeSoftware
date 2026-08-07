@@ -1,0 +1,439 @@
+:root {
+  --practice-bg: #ffffff;
+  --practice-ink: #0f172a;
+  --practice-soft: #475569;
+  --practice-line: #e5e7eb;
+  --practice-panel: #f8fafc;
+  --practice-accent: #178b3a;
+  --practice-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+}
+
+body.practice-deck-body {
+  background: var(--practice-bg);
+}
+
+.deck-toolbar {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 30;
+}
+
+.deck-toolbar-light a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 999px;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.84);
+  border-color: rgba(15, 23, 42, 0.12);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.deck-toolbar-light a:hover {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.practice-reveal {
+  color: var(--practice-ink);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.practice-reveal .slides {
+  text-align: left;
+}
+
+.practice-reveal .slides section {
+  height: 100%;
+}
+
+.practice-reveal h1,
+.practice-reveal h2,
+.practice-reveal h3 {
+  margin: 0;
+  color: var(--practice-ink);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 500;
+  line-height: 0.98;
+  text-transform: none;
+}
+
+.practice-reveal h1 {
+  font-size: clamp(3rem, 6vw, 5.3rem);
+}
+
+.practice-reveal h2 {
+  font-size: clamp(2rem, 4vw, 3.8rem);
+}
+
+.practice-reveal h3 {
+  font-size: 1.2rem;
+}
+
+.practice-reveal p,
+.practice-reveal li {
+  color: var(--practice-soft);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.practice-reveal code {
+  color: #0f3d9a;
+  font-family: "SF Mono", "Monaco", monospace;
+}
+
+.practice-cover,
+.practice-title-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.practice-title-slide-accent {
+  align-items: flex-start;
+  padding: 0 2rem;
+}
+
+.practice-intro-note {
+  max-width: 44rem;
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid var(--practice-line);
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fffdf7, #f7f3e7);
+  box-shadow: var(--practice-shadow);
+}
+
+.practice-intro-note ul {
+  margin: 0.9rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.practice-cover {
+  align-items: center;
+  text-align: center;
+}
+
+.practice-eyebrow {
+  margin-bottom: 0.8rem;
+  color: var(--practice-soft);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.practice-link {
+  margin-top: 1.4rem;
+}
+
+.practice-link a {
+  color: #0f3d9a;
+  text-decoration: none;
+}
+
+.practice-header {
+  margin-bottom: 1.4rem;
+}
+
+.practice-stack,
+.practice-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.practice-stack {
+  grid-template-columns: 1fr;
+}
+
+.practice-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.practice-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.practice-tool-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 240px;
+  padding: 1.3rem;
+  border: 1px solid var(--practice-line);
+  border-radius: 22px;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  box-shadow: var(--practice-shadow);
+}
+
+.practice-tool-card-accent {
+  justify-content: center;
+  background: linear-gradient(180deg, #fffdf7, #f7f3e7);
+}
+
+.practice-tool-logo {
+  width: auto;
+  max-width: 180px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.practice-tool-logo-go {
+  height: 42px;
+}
+
+.practice-tool-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  color: #f8fafc;
+  background: var(--practice-accent);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.practice-panel {
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--practice-line);
+  border-radius: 20px;
+  background: var(--practice-panel);
+  box-shadow: var(--practice-shadow);
+}
+
+.practice-panel h3 {
+  margin-bottom: 0.7rem;
+}
+
+.practice-panel-wide {
+  margin-top: 1rem;
+}
+
+.practice-panel pre {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  width: 100%;
+  font-size: 0.84rem;
+}
+
+.practice-panel pre code {
+  color: var(--practice-accent);
+}
+
+.practice-interface-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.practice-interface-diagram {
+  display: grid;
+  place-items: center;
+  gap: 0.9rem;
+  text-align: center;
+}
+
+.practice-interface-node,
+.practice-interface-leaf {
+  width: min(100%, 17rem);
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--practice-line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #f8fffb, #edf9f1);
+}
+
+.practice-interface-node span,
+.practice-interface-leaf strong {
+  display: block;
+  color: var(--practice-ink);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.practice-interface-node small,
+.practice-interface-leaf small {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--practice-soft);
+  font-size: 0.88rem;
+}
+
+.practice-interface-arrow {
+  color: var(--practice-accent);
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.practice-interface-branches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  width: 100%;
+}
+
+.practice-flow-slide {
+  padding: 0 1.5rem;
+}
+
+.practice-sequence {
+  display: grid;
+  gap: 0.7rem;
+  max-width: 56rem;
+}
+
+.practice-sequence-step {
+  padding: 1.2rem 1.3rem;
+  border: 1px solid var(--practice-line);
+  border-radius: 22px;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  box-shadow: var(--practice-shadow);
+}
+
+.practice-sequence-step h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.practice-sequence-step pre {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.practice-inline-note {
+  margin-top: 0.75rem;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.practice-sequence-step-code {
+  background: linear-gradient(180deg, #f8fffb, #edf9f1);
+}
+
+.practice-sequence-step-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(180deg, #fffdf7, #f7f3e7);
+}
+
+.practice-sequence-step-highlight {
+  background: linear-gradient(180deg, #f3f7ff, #eaf0ff);
+}
+
+.practice-sequence-arrow {
+  display: grid;
+  place-items: center;
+  min-height: 1.5rem;
+  color: var(--practice-accent);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.practice-flow-label {
+  margin: 0 0 0.65rem;
+  color: var(--practice-ink);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.practice-step-slide {
+  padding: 0 1.5rem;
+}
+
+.practice-step-stack {
+  display: grid;
+  gap: 0.7rem;
+  max-width: 56rem;
+}
+
+.practice-step-note {
+  padding: 1.2rem 1.25rem;
+  border: 1px solid var(--practice-line);
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fffdf7, #f7f3e7);
+  box-shadow: var(--practice-shadow);
+}
+
+.practice-org-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.practice-note {
+  margin-top: 1rem;
+  max-width: 58rem;
+}
+
+.callout {
+  margin-top: 0.9rem;
+  color: var(--practice-ink);
+  font-weight: 600;
+}
+
+.practice-exercise-link {
+  margin-top: 1rem;
+}
+
+.practice-exercise-link a {
+  color: #0f3d9a;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.practice-code-focus {
+  max-width: 68rem;
+}
+
+.practice-tree {
+  max-width: 44rem;
+}
+
+.practice-tree pre code {
+  color: #111827;
+}
+
+.practice-reveal .controls,
+.practice-reveal .progress {
+  color: #0f3d9a;
+}
+
+.practice-reveal .slide-number {
+  right: 18px;
+  bottom: 18px;
+  color: #ffffff;
+  background: rgba(15, 23, 42, 0.72);
+  border-radius: 999px;
+  padding: 0.28rem 0.55rem;
+}
+
+@media (max-width: 900px) {
+  .practice-tools-grid,
+  .practice-interface-layout,
+  .practice-interface-branches,
+  .practice-org-grid,
+  .practice-grid.two {
+    grid-template-columns: 1fr;
+  }
+}

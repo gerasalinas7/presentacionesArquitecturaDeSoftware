@@ -26,8 +26,11 @@
           <h2>Recorrido del curso</h2>
         </section>
 
-        <section class="class-grid">
-          <article class="class-card class-card-featured">
+        <section
+          class="class-grid"
+          style="display: flex; flex-direction: column; gap: 1rem;"
+        >
+          <article class="class-card class-card-featured" style="width: 100%;">
             <p class="class-kicker">Clase 1</p>
             <h3>Introducción a la Arquitectura de Software</h3>
             <p>
@@ -40,11 +43,24 @@
             </div>
           </article>
 
-          <article class="class-card class-card-muted">
-            <p class="class-kicker">Próximamente</p>
-            <h3>Más clases</h3>
+          <article class="class-card class-card-muted" style="width: 100%;">
+            <p class="class-kicker">Clase 2</p>
+            <h3>MongoDB, Docker e Interfaces</h3>
             <p>
-              Próximas unidades de la cursada.
+              Práctica sobre MongoDB con Docker, repositorios e interfaces en Go.
+            </p>
+            <div class="card-actions">
+              <a class="button button-primary" href="./clases/clase-2/"
+                >Abrir clase</a
+              >
+            </div>
+          </article>
+
+          <article class="class-card class-card-muted" style="width: 100%;">
+            <p class="class-kicker">Recursos</p>
+            <h3>Ejercicios</h3>
+            <p>
+              Base inicial de ejercicios y snippets para acompañar las prácticas.
             </p>
           </article>
         </section>
