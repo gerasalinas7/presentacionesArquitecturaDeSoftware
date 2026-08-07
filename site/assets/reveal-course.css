@@ -1,19 +1,19 @@
 :root {
-  --deck-bg: #f4ecdf;
-  --deck-ink: #1e293b;
-  --deck-soft: #526074;
-  --deck-accent: #0f766e;
-  --deck-accent-2: #d97745;
-  --deck-line: rgba(30, 41, 59, 0.12);
-  --deck-panel: rgba(255, 251, 245, 0.88);
-  --deck-shadow: 0 22px 70px rgba(15, 23, 42, 0.14);
+  --deck-bg: #212326;
+  --deck-ink: #f4d8c1;
+  --deck-soft: #d0b198;
+  --deck-accent: #e38b5b;
+  --deck-accent-2: #42b7b2;
+  --deck-line: rgba(244, 216, 193, 0.14);
+  --deck-panel: rgba(255, 255, 255, 0.02);
+  --deck-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
 }
 
 .reveal-course-body {
   background:
-    radial-gradient(circle at top left, rgba(15, 118, 110, 0.18), transparent 28%),
-    radial-gradient(circle at top right, rgba(217, 119, 69, 0.18), transparent 22%),
-    linear-gradient(180deg, #f7f1e7 0%, #efe4d3 100%);
+    radial-gradient(circle at top left, rgba(66, 183, 178, 0.1), transparent 26%),
+    radial-gradient(circle at right center, rgba(227, 139, 91, 0.08), transparent 22%),
+    linear-gradient(180deg, #1f2124 0%, #24272b 100%);
 }
 
 .deck-toolbar {
@@ -31,7 +31,7 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 999px;
   color: #f8fafc;
-  background: rgba(15, 23, 42, 0.45);
+  background: rgba(15, 23, 42, 0.4);
   backdrop-filter: blur(10px);
   font: 700 0.9rem/1 "Avenir Next", "Segoe UI", sans-serif;
   text-decoration: none;
@@ -48,6 +48,7 @@
 
 .reveal .slides section {
   height: 100%;
+  padding: 0.65rem 0.2rem;
 }
 
 .reveal h1,
@@ -61,23 +62,23 @@
 }
 
 .reveal h1 {
-  font-size: 4rem;
+  font-size: 4.8rem;
 }
 
 .reveal h2 {
-  font-size: 2.4rem;
-  max-width: 10ch;
+  font-size: 3.1rem;
+  max-width: 14ch;
 }
 
 .reveal h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .reveal p,
 .reveal li {
   color: var(--deck-soft);
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.02rem;
+  line-height: 1.55;
 }
 
 .reveal strong,
@@ -86,27 +87,47 @@
 }
 
 .slide-kicker {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   color: var(--deck-accent);
   font: 800 0.82rem/1.2 "Avenir Next", "Segoe UI", sans-serif;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
+.slide-header {
+  margin-bottom: 1.7rem;
+}
+
 .lead {
-  margin-top: 1rem;
-  max-width: 38rem;
+  margin-top: 1.15rem;
+  max-width: 44rem;
   font-size: 1.15rem;
+}
+
+.lead-xl {
+  max-width: none;
+  font-size: 1.45rem;
 }
 
 .narrow {
   max-width: 32rem;
 }
 
+.cover-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.cover-slide h1 {
+  margin-top: 0.2rem;
+}
+
 .card-grid {
   display: grid;
   gap: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 1.7rem;
 }
 
 .card-grid.four {
@@ -133,7 +154,7 @@
 }
 
 .mini-card {
-  padding: 1rem;
+  padding: 1.1rem 1.15rem;
 }
 
 .mini-card h3,
@@ -144,12 +165,12 @@
 
 .mini-card.warning,
 .highlight-band.danger {
-  background: linear-gradient(145deg, rgba(217, 119, 69, 0.15), rgba(255, 251, 245, 0.92));
+  background: linear-gradient(145deg, rgba(227, 139, 91, 0.18), rgba(255, 255, 255, 0.03));
 }
 
 .mini-card.accent,
 .centered-card {
-  background: linear-gradient(145deg, rgba(15, 118, 110, 0.12), rgba(255, 251, 245, 0.92));
+  background: linear-gradient(145deg, rgba(66, 183, 178, 0.16), rgba(255, 255, 255, 0.03));
 }
 
 .centered-card {
@@ -174,6 +195,10 @@
   padding: 1rem 1.2rem;
 }
 
+.quote-box.large {
+  padding: 1.15rem 1.4rem;
+}
+
 .quote-box.soft {
   display: block;
   margin-top: 1.5rem;
@@ -190,6 +215,10 @@
   gap: 1rem;
   align-items: stretch;
   margin-top: 1.5rem;
+}
+
+.story-layout.wide {
+  grid-template-columns: 1.5fr 0.9fr;
 }
 
 .table-grid {
@@ -257,13 +286,140 @@
   padding: 0.28rem 0.55rem;
 }
 
+.statement-panel {
+  max-width: 46rem;
+  padding: 1.3rem 1.45rem;
+  border-left: 3px solid var(--deck-accent);
+  border-radius: 0 22px 22px 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.statement-panel p + p {
+  margin-top: 0.8rem;
+}
+
+.media-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.image-panel {
+  padding: 1rem;
+  border: 1px solid var(--deck-line);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: var(--deck-shadow);
+}
+
+.image-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
+.stack-cards {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.logo-grid.compact {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.logo-card {
+  padding: 1.15rem 1rem 1rem;
+  border: 1px solid var(--deck-line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.015);
+  box-shadow: var(--deck-shadow);
+}
+
+.logo-card img,
+.logo-placeholder {
+  display: block;
+  width: 78px;
+  height: 78px;
+  margin-bottom: 1rem;
+}
+
+.logo-card img {
+  object-fit: contain;
+}
+
+.logo-placeholder {
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  color: var(--deck-ink);
+  background: linear-gradient(135deg, rgba(66, 183, 178, 0.22), rgba(66, 183, 178, 0.08));
+  font: 700 0.92rem/1.1 "Avenir Next", "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+.logo-card h3 {
+  margin-bottom: 0.55rem;
+}
+
+.pill-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pill {
+  padding: 0.48rem 0.7rem;
+  border: 1px solid var(--deck-line);
+  border-radius: 999px;
+  color: var(--deck-ink);
+  background: rgba(255, 255, 255, 0.04);
+  font: 700 0.88rem/1 "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.rule-row {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.35rem;
+}
+
+.domain-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.8rem;
+}
+
+.domain-cloud span {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--deck-line);
+  border-radius: 999px;
+  color: var(--deck-ink);
+  background: rgba(255, 255, 255, 0.03);
+  font: 700 1rem/1 "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.spacious {
+  gap: 1.15rem;
+}
+
 @media (max-width: 900px) {
+  .logo-grid,
+  .logo-grid.compact,
   .card-grid.four,
   .card-grid.three,
   .card-grid.two,
   .table-grid,
   .steps-grid,
-  .story-layout {
+  .story-layout,
+  .media-split {
     grid-template-columns: 1fr;
   }
 
@@ -274,5 +430,11 @@
   .reveal h2 {
     font-size: 2rem;
     max-width: none;
+  }
+
+  .logo-card img,
+  .logo-placeholder {
+    width: 64px;
+    height: 64px;
   }
 }
