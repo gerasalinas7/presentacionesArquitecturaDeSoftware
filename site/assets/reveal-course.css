@@ -106,6 +106,14 @@ body.reveal-course-body {
   text-align: center;
 }
 
+.qr-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  text-align: center;
+}
+
 .title-block {
   display: grid;
   gap: 0.55rem;
@@ -114,6 +122,8 @@ body.reveal-course-body {
 .title-block-cover {
   justify-items: center;
   gap: 0.75rem;
+  align-content: center;
+  min-height: 70vh;
 }
 
 .cover-strap,
@@ -199,6 +209,25 @@ body.reveal-course-body {
   box-shadow: var(--deck-shadow);
 }
 
+.qr-card {
+  width: min(100%, 40rem);
+  padding: 2rem 2.2rem;
+  border: 1px solid var(--deck-line);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top, rgba(37, 211, 102, 0.16), transparent 40%),
+    var(--deck-panel-soft);
+  box-shadow: var(--deck-shadow);
+  margin: 0 auto;
+}
+
+.qr-card h2 {
+  max-width: none;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  line-height: 1;
+  text-align: center;
+}
+
 .statement-panel,
 .story-card {
   max-width: 66rem;
@@ -235,6 +264,35 @@ body.reveal-course-body {
 
 .profile-data p {
   font-size: 1.05rem;
+}
+
+.qr-lead {
+  max-width: none;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.qr-image {
+  display: block;
+  width: min(100%, 300px);
+  height: auto;
+  margin: 1.2rem auto 1rem;
+  padding: 0.8rem;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.qr-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  color: #f8fafc;
+  background: #1f8f49;
+  font: 700 0.98rem/1 "Avenir Next", "Segoe UI", sans-serif;
+  text-decoration: none;
 }
 
 .statement-panel p + p,
