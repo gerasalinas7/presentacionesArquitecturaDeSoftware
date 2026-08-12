@@ -145,7 +145,7 @@ p {
 
 .class-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
@@ -163,15 +163,11 @@ p {
   padding: 1.5rem;
 }
 
-.class-card-featured {
-  grid-column: span 8;
+.class-card-featured,
+.class-card-muted {
   background:
     linear-gradient(135deg, rgba(15, 118, 110, 0.08), transparent 55%),
     var(--surface-strong);
-}
-
-.class-card-muted {
-  grid-column: span 4;
 }
 
 .class-card p + .card-actions,
@@ -278,11 +274,6 @@ p {
 @media (max-width: 840px) {
   .hero {
     padding: 2rem;
-  }
-
-  .class-card-featured,
-  .class-card-muted {
-    grid-column: 1 / -1;
   }
 
   .panel-accent {
